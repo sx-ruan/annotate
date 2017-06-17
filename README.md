@@ -1,2 +1,23 @@
 # annotate
 A simple Python program for annotating VCF files
+usage: python annotate.py out_path [vcf_path]
+
+The output file is tab-delimited and has 9 columns:
+chrom: Chromosome
+pos: Reference position
+ref: Reference sequence
+alt: Alternate (variant) sequence
+variant_type: Variant type composed of one or two items. The first item comes 
+    from the VCF file and is either snp, mnp, ins, del or complex. The optional 
+    second item is a Sequence Ontology (SO) term that describes the consequence 
+    of the variant, if the variant is in the ExAC database. If several SO terms 
+    are possible, only the most severe one is reported.
+seq_depth: Depth of sequence coverage at the site of variation
+num_variant_reads: Number of reads supporting the variant
+pct_variant_reads: Percentage of reads supporting the variant versus those 
+    supporting the reference
+exac_allele_freq: Allele frequency of variant from Broad Institute ExAC Project
+
+Note:
+If the VCF file records multiple alternate alleles at the same position, all of 
+the variants will be recorded (but separately) in the annotation file.
