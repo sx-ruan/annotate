@@ -2,7 +2,9 @@
 
 """
 A simple Python program for annotating VCF files
-usage: python annotate.py out_path [vcf_path]
+
+Required python packages: requests, numpy
+Usage: python annotate.py out_path [vcf_path]
 
 The output file is tab-delimited and has 9 columns:
 chrom: Chromosome
